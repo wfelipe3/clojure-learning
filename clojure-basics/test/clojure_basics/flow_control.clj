@@ -18,7 +18,26 @@
     (is (= :ok (if-not (empty? x)
                  (do (println "ok")
                    :ok)
-                 nil)))))
+                 nil)))
+   (testing "when-not statement"
+     (is (= :ok (when-not (empty? x)
+                  (println "ok")
+                  :ok))))
+   (testing "when statement"
+     (is (= :ok (when (not (empty? x))
+                  (println "ok")
+                  :ok))))
+   (testing "case statement"
+     (is (= :hello (case x
+                     "Goodbye" :bye
+                     "hello world" :hello
+                     :nothing))))
+   (testing "cond statement"
+     (is (= :ok (cond
+                  (= x "hello world") :ok
+                  (= (reverse x) "olleh") :olleh
+                  :otherwise :nothing))))))
+
 
 (defn add
   ([x y] (+ x y))
