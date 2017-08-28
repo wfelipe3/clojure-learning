@@ -3,6 +3,8 @@
   (:require [clojure.test :refer :all]
             [clojure-basics.core :refer :all]))
 
+(defn muliple-arity-type [& value] (type value))
+
 (deftest testing-types
   (testing "show clojure types"
     (is (= java.lang.Long (type 1)))
@@ -19,7 +21,8 @@
     (is (= clojure.lang.PersistentArrayMap (type {:a 1 :b 2 :c 3})))
     (is (= clojure.lang.PersistentHashMap (type (hash-map :a 1 :b 2 :c 3))))
     (is (= clojure.lang.PersistentHashSet (type #{1 2 3})))
-    (is (= clojure.lang.PersistentHashSet (type (hash-set 1 2 3))))))
+    (is (= clojure.lang.PersistentHashSet (type (hash-set 1 2 3))))
+    (is (= clojure.lang.ArraySeq (muliple-arity-type "felipe" "rojas")))))
 
 (deftest map-values
   (testing "get value from map"
