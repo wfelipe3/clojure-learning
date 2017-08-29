@@ -22,7 +22,8 @@
     (is (= clojure.lang.PersistentHashMap (type (hash-map :a 1 :b 2 :c 3))))
     (is (= clojure.lang.PersistentHashSet (type #{1 2 3})))
     (is (= clojure.lang.PersistentHashSet (type (hash-set 1 2 3))))
-    (is (= clojure.lang.ArraySeq (muliple-arity-type "felipe" "rojas")))))
+    (is (= clojure.lang.ArraySeq (muliple-arity-type "felipe" "rojas")))
+    (is (= clojure.lang.LazySeq (type (concat [1 2 3] [4 5 6]))))))
 
 (deftest map-values
   (testing "get value from map"

@@ -7,6 +7,6 @@ This are notes related with clojure learnig
 3. def defines a value that can be used in the context, is like a variable, but it is not modifiable like a val in scala
 4. fn defines an anonymous function 
 5. defn is an abreviation to define a function with a name like (def hello (fn [] "hello")) -> (defn [] "hello")
-
+6. The difference between array-map and hash-map is that array-map preserves order and hash-map is a hashed set of elements
 
 
