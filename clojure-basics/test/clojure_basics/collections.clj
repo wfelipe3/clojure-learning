@@ -15,6 +15,8 @@
     (is (= 1 (first (list 1 2 3)))))
   (testing "get last element of list"
     (is (= 3 (last (list 1 2 3)))))
+  (testing "get tail of a list"
+    (is (= [2 3] (rest (list 1 2 3)))))
   (testing "get arbitrary index"
     (is (= 2 (nth (list 1 2 3) 1))))
   (testing "get arbitrary index that does not exist"
